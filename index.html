@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlexHaus: The Comeback — Comms Pack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --carbon:#0E1116;
+  --chalk:#F5F5F2;
+  --chalk-dark:#e6e6e0;
+  --volt:#C6F24E;
+  --volt-dark:#a8d43a;
+  --ember:#FF5A3C;
+  --ember-light:#ff7a62;
+  --text:#0E1116;
+  --text-light:#5a5a6a;
+  --white:#ffffff;
+  --font:'Inter',-apple-system,sans-serif;
+  --shadow:0 2px 12px rgba(14,17,22,0.06);
+  --radius:12px;
+  --max-w:800px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:var(--font);
+  background:var(--chalk);
+  color:var(--text);
+  line-height:1.6;
+}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px;}
+
+header{
+  background:var(--carbon);
+  color:var(--white);
+  padding:40px 0 28px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+header::after{
+  content:'';
+  position:absolute;
+  top:-35%;left:50%;transform:translateX(-50%);
+  width:300px;height:300px;
+  border-radius:50%;
+  background:rgba(198,242,78,0.04);
+}
+header h1{
+  font-size:clamp(1.4rem,3.5vw,2rem);
+  font-weight:800;
+  letter-spacing:-0.03em;
+  color:var(--volt);
+  position:relative;
+}
+header .sub{color:rgba(255,255,255,0.5);margin-top:6px;font-size:0.85rem;position:relative;}
+
+section{padding:32px 0;}
+.section-label{
+  font-size:0.7rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;
+  color:var(--ember);margin-bottom:4px;
+}
+h2{
+  font-size:clamp(1.1rem,2.5vw,1.4rem);
+  font-weight:800;
+  margin-bottom:12px;
+  line-height:1.2;
+}
+h3{font-size:0.92rem;font-weight:700;margin-bottom:6px;}
+p{margin-bottom:8px;font-size:0.85rem;color:var(--text-light);}
+
+.card{
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--chalk-dark);
+  margin-bottom:16px;
+}
+
+/* SMS */
+.sms-frame{
+  background:var(--chalk);
+  border:1px solid var(--chalk-dark);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-top:8px;
+}
+.sms-frame .sms-label{
+  font-size:0.65rem;text-transform:uppercase;letter-spacing:0.04em;
+  color:var(--text-light);margin-bottom:6px;
+}
+.sms-frame .sms-body{font-size:0.88rem;color:var(--text);line-height:1.5;}
+.sms-frame .sms-body .highlight{color:var(--ember);font-weight:600;}
+
+/* email */
+.email-frame{
+  background:var(--chalk);
+  border:1px solid var(--chalk-dark);
+  border-radius:10px;
+  padding:18px 20px;
+  margin-top:8px;
+  font-size:0.85rem;
+}
+.email-frame .e-subject{
+  font-weight:700;color:var(--carbon);
+  margin-bottom:10px;padding-bottom:8px;
+  border-bottom:1px solid var(--chalk-dark);
+  font-size:0.8rem;
+}
+.email-frame .e-body p{margin-bottom:8px;color:var(--text);}
+.email-frame .e-cta{
+  display:inline-block;
+  background:var(--carbon);
+  color:var(--volt);
+  padding:9px 24px;border-radius:6px;
+  text-decoration:none;font-weight:700;font-size:0.85rem;
+  margin:6px 0 10px;transition:opacity 0.2s;
+}
+.email-frame .e-cta:hover{opacity:0.8;}
+.email-frame .e-footer{
+  font-size:0.68rem;color:var(--text-light);
+  margin-top:12px;padding-top:10px;
+  border-top:1px solid var(--chalk-dark);
+}
+
+/* social */
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:14px;
+  margin-top:8px;
+}
+.social-card{
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--chalk-dark);
+  border-top:3px solid var(--ember);
+}
+.social-card .platform{
+  font-size:0.68rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.05em;color:var(--text-light);
+}
+.social-card .handle{font-size:0.72rem;color:var(--text-light);margin-bottom:6px;}
+.social-card .post-copy{font-size:0.83rem;line-height:1.6;color:var(--text);}
+.social-card .post-copy .tag{color:var(--volt-dark);font-weight:600;}
+.social-card .post-note{
+  margin-top:8px;
+  background:var(--chalk);
+  border-radius:6px;
+  padding:8px 10px;
+  font-size:0.72rem;
+  color:var(--text-light);
+  font-style:italic;
+}
+
+.tone-note{
+  background:var(--carbon);
+  color:var(--white);
+  border-radius:var(--radius);
+  padding:22px;
+  margin-top:14px;
+}
+.tone-note h3{color:var(--volt);}
+.tone-note p{color:rgba(255,255,255,0.75);font-size:0.82rem;}
+
+hr{border:none;border-top:1px solid var(--chalk-dark);margin:4px 0;}
+
+footer{
+  border-top:1px solid var(--chalk-dark);
+  text-align:center;
+  padding:20px 0;
+  font-size:0.7rem;
+  color:var(--text-light);
+}
+
+@media(max-width:600px){
+  header{padding:28px 0 20px;}
+  section{padding:20px 0;}
+  .card{padding:16px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>FlexHaus: The Comeback</h1>
+    <div class="sub">Win-Back Communications Pack</div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- TONE -->
+  <section>
+    <div class="section-label">Tone of Voice</div>
+    <h2>Warm. Direct. Momentum.</h2>
+    <p>These people feel guilty already. Shame does not sell a comeback. Every message reframes the lapse as a return &mdash; "Your spot's still here" not "You haven't been in."</p>
+    <div class="tone-note">
+      <h3>Voice Pillars</h3>
+      <p><strong>Warm</strong> &mdash; "Hey, we noticed." Never "You haven't been in." A human check-in from someone who remembers you.<br>
+      <strong>Direct</strong> &mdash; Clear CTA, one tap, no friction. The booking link is the hero.<br>
+      <strong>Momentum</strong> &mdash; Frame the return as the start of something, not the end of a gap. "Your next class is waiting."</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- 3-TOUCH WIN-BACK -->
+  <section>
+    <div class="section-label">Win-Back Sequence</div>
+    <h2>3-Touch Automated Flow</h2>
+    <p>Triggered when an at-risk member is identified. All copy computed from data: the class type pre-selected is their most-booking type from the CSV.</p>
+
+    <!-- Touch 1: SMS -->
+    <div class="card">
+      <h3>&#9312; Touch 1: SMS &mdash; 24h after identification</h3>
+      <p style="font-size:0.78rem;color:var(--text-light);">Channel: SMS &bull; Trigger: Member flagged at-risk (one-and-done OR 30d+ no visit) &bull; Metric: Link click</p>
+      <div class="sms-frame">
+        <div class="sms-label">SMS &bull; From: FlexHaus</div>
+        <div class="sms-body">
+          <p>Hey {name}, your spot's still here. &#128170;</p>
+          <p>We saved you a place in {favourite_class} this {next_weekday}. It's the one you always took &mdash; and there's a spot open.</p>
+          <p>Book it in one tap: <span class="highlight">flex.haus/comeback</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Touch 2: Email -->
+    <div class="card">
+      <h3>&#9313; Touch 2: Email &mdash; Day 3 if no booking</h3>
+      <p style="font-size:0.78rem;color:var(--text-light);">Channel: Email &bull; Trigger: No booking 72h after SMS &bull; Metric: Email click &rarr; booking</p>
+      <div class="email-frame">
+        <div class="e-subject">
+          To: {name} &nbsp;|&nbsp; From: Dervla &lt;dervla@flexhaus.com&gt;<br>
+          Subject: It's been a minute. Your class is still there.
+        </div>
+        <div class="e-body">
+          <p>Hey {name},</p>
+          <p>It's Dervla. I run FlexHaus &mdash; I'm usually teaching, not emailing, so if you're reading this, I wanted to say it myself: your spot's still here.</p>
+          <p>No guilt. No catch. Just an open class on {day} at {time} that has your name on it if you want it.</p>
+          <p>I know the first class back is the hardest. So we kept it simple: {favourite_class}, next {weekday}, one tap.</p>
+          <p style="text-align:center;"><a href="#" class="e-cta">Book My Comeback Class</a></p>
+          <p>See you soon,</p>
+          <p>Dervla</p>
+          <div class="e-footer">
+            <p>You're getting this because you're a FlexHaus member. If you'd rather not hear from us, <a href="#" style="color:var(--ember);">opt out here</a>.</p>
+            <p>FlexHaus &middot; One location &middot; hello@flexhaus.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Touch 3: Final nudge -->
+    <div class="card">
+      <h3>&#9314; Touch 3: SMS (Final Nudge) &mdash; Day 7</h3>
+      <p style="font-size:0.78rem;color:var(--text-light);">Channel: SMS &bull; Trigger: No booking after 7 days &bull; Metric: Last-chance link click</p>
+      <div class="sms-frame">
+        <div class="sms-label">SMS &bull; From: Dervla at FlexHaus</div>
+        <div class="sms-body">
+          <p>{name}, it's Dervla. Last call on that saved spot in {favourite_class} this week.</p>
+          <p>No pressure &mdash; but it's there if you want it.</p>
+          <p><span class="highlight">flex.haus/comeback</span></p>
+          <p style="font-size:0.75rem;color:var(--text-light);margin-top:4px;">Reply STOP to opt out anytime.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <hr>
+
+  <!-- SOCIAL POSTS -->
+  <section>
+    <div class="section-label">Social Content</div>
+    <h2>2 Instagram Posts</h2>
+    <p>Organic content to remind at-risk members that FlexHaus is warm, welcoming, and waiting. No invented stats.</p>
+
+    <div class="social-grid">
+
+      <div class="social-card">
+        <div class="platform">Instagram</div>
+        <div class="handle">@flexhaus</div>
+        <div class="post-copy">
+          <p>Your spot's still here. &#128170;</p>
+          <p>If you joined FlexHaus and haven't been back &mdash; this is your sign. The class you loved is still running. The coach who remembered your name is still teaching it. And there's a spot open this week.</p>
+          <p>Link in bio to book your comeback class. No guilt, just a great workout.</p>
+          <p><span class="tag">#FlexHaus #YourSpotsStillHere #Comeback #BoutiqueFitness</span></p>
+        </div>
+        <div class="post-note">
+          <strong>Asset:</strong> Warm, natural photo of a coach mid-conversation with a member, gym background, natural light. Text overlay: "Your spot's still here." CTA: Link in bio. <strong>Metric:</strong> Bio link clicks.
+        </div>
+      </div>
+
+      <div class="social-card">
+        <div class="platform">Instagram (Carousel)</div>
+        <div class="handle">@flexhaus</div>
+        <div class="post-copy">
+          <p><strong>Slide 1:</strong> "3 reasons to book your comeback class this week."</p>
+          <p><strong>Slide 2:</strong> "1. Your favourite class is still running. Thursday HIIT with Sam? Still there."</p>
+          <p><strong>Slide 3:</strong> "2. The hardest part is walking through the door. After that, it's just a great workout."</p>
+          <p><strong>Slide 4:</strong> "3. We saved you a spot. Seriously &mdash; there's one open this week with your name on it."</p>
+          <p><span class="tag">#FlexHaus #Comeback #BoutiqueGym #NoJudgment</span></p>
+        </div>
+        <div class="post-note">
+          <strong>Asset:</strong> 4-slide carousel. Slide 1: bold typographic card (Chalk bg, Carbon text, Volt accent). Slides 2-4: gym lifestyle shots with overlay text. <strong>Metric:</strong> Carousel swipe-through rate &rarr; bio link clicks.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    FlexHaus &middot; Communications Pack &middot; Written by R&oacute;is&iacute;n (Green) &middot; June 2026
+  </div>
+</footer>
+
+</body>
+</html>
